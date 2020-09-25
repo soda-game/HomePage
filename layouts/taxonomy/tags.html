@@ -1,0 +1,38 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<main class="section">
+  <div class="container">
+    <h2 id="tagshow"></h2>
+    <div id="blog_list">
+      {{ $paginator := .Paginate (where .Data.Pages "Params.hidden" "ne" true) }}
+      {{ range sort .Paginator.Pages }}
+      <div class="blog_link">
+        <a href="{{ .Permalink }}">
+          <img src="/{{ .File.Dir }}{{ .File.BaseFileName }}-t.png" alt="{{ .Title }}のサムネイル">
+          <h3>{{ .Title }}{{ partial "taxonomies_count" . }}</h3>
+          <p class="date">{{ .Date.Format "2006 1/2" }}</p>
+        </a>
+          <p class="tags">
+            {{ if .Params.tags }}
+            {{ partial "tags" .Params.tags }}
+            {{ end }}
+          </p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</main>
+{{ partial "pager" . }}
+{{ partial "footer" . }}
+<script type="text/javascript">
+  var getUrl = location.pathname;
+  console.log(getUrl);
+  getUrl = decodeURI(getUrl);
+  console.log(getUrl);
+  var tag = getUrl.substr( 6 );
+  tag = tag.slice( 0, -1 );
+  console.log(tag);
+  const tag_show = document.getElementById("tagshow");
+  tagshow.innerHTML = "#" + tag + "のついているブログ一覧";
+  console.log("aaaaaaaaa");
+</script>

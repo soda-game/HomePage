@@ -1,0 +1,12 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+    {{if range where .Site.Pages "Params.series" "game"}}
+        {{partial "game" .}}
+    {{if range where .Site.Pages "Params.series" "info"}}
+        {{partial "info" .}}
+    {{else}}
+        {{partial "single" .}}
+    {{end}}
+    {{ partial "footer" . }}
+  </body>
+</html>

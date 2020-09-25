@@ -1,0 +1,84 @@
+{{ partial "header" . }}
+</head>
+<body>
+<header>
+    <a href="/">
+        <img src="/img/logo.png" alt="">
+    </a>
+    <div class="sp_under">
+        <a href="#game">GAME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#info">INFO</a>
+        <a href="#link">LINK</a>
+    </div>
+</header>
+<main class="mt">
+    <h1 class="none">SodaGameの公式サイト</h1>
+    <section id="top_image" class="bg_img">
+        <img src="/img/logo.png" alt="SodaGame">
+    </section>
+    <section id="game" class="bg_img">
+        <div class="wrap">
+            <h2>GAME</h2>
+            <div id="product_wrap">
+                {{ range where .Site.Pages "Params.series" "game" }}
+                    <div class="product">
+                        <a class="p_link" href="{{ .Permalink }}">
+                            <img src="{{ if .Params.imgUrl }}{{ .Params.imgUrl }}{{else}}{{ end }}" alt="">
+                            <h3 class="meta">{{ .Title }}</h3>
+                            <p class="meta">{{ .Description }}</p>
+                        </a>
+                    </div>
+                {{ end }}
+            </div>    
+        </div>
+    </section>
+    <section id="about" class="bg_img">
+        <div class="wrap">
+            <h2>ABOUT</h2>
+            <div id="about_wrap">
+                <div id="a_face_img_wrap" class="a_ib">
+                    <img id="a_face_img" src="/img/face_icon.png" alt="">
+                </div>
+                <div id="a_data" class="a_ib">
+                    <p id="a_name">Soda(そおだ)</p>
+                    <p class="a_about">職業 学生</p>
+                    <p class="a_about">スキル プログラム(C#・C++)/デザイン/Git</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg_img">
+        <section id="info">
+            <div class="wrap">
+                <h2>INFO</h2>
+                <div id="info_wrap">
+                    {{ range where .Site.Pages "Params.series" "info" }}
+                        <a href="{{ .Permalink }}">
+                            <p class="meta">【{{ .Date.Format "2006.01.02" }}】{{ .Title }}</p>
+                        </a>
+                    {{ end }}
+                </div>
+            </div>
+        </section>
+        <section id="link">
+            <div class="wrap">
+                <h2>LINK</h2>
+                <div id="link_wrap" ontouchstart="">
+                    <a class="links" id="twitter_link" href="https://twitter.com/{{ $.Site.Params.twitterId }}">Twitter<span class="link_no_show">@{{ $.Site.Params.twitterId }}</span></a>
+                    <a class="links" id="youtube_link" href="{{ $.Site.Params.youtube }}">YouTube</a>
+                    <a class="links" id="github_link" href="{{ $.Site.Params.github }}">GitHub</a>
+                    <a class="links other_link" href="{{ $.Site.Params.freem }}">freem!</a>
+                    <a class="links other_link" href="{{ $.Site.Params.unityroom }}">unityroom</a>
+                </div>
+                <div id="mailwrap">
+                    <p id="mail">Mail : {{ $.Site.Params.mail }}</p>
+                    <p id="mail_sub">(※ スパム防止のため＠に[]をつけています。ご連絡の際は[] を外してご使用ください。)</p>    
+                </div>
+            </div>
+        </section>
+    </section>
+    </main>
+    {{ partial "footer" . }}
+  </body>
+</html>

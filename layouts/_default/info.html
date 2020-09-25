@@ -1,0 +1,31 @@
+<main>
+  <div class="container">
+    <div id="title_data">
+      <div id="title_text">
+			  <h1>{{ .Title }}</h1>
+        <p id="upload_date" class="icon icon-clock">投稿日:{{ .Date.Format "2006 1/2" }}</p>
+        <p id="tags" class="icon icon-tags">タグ:
+        <span>
+          {{ if .Params.tags }}
+          {{ partial "tags" .Params.tags }}
+          {{ end }}
+        </span>
+        </p>
+      </div>
+      <picture>
+       <source srcset="../{{ .File.BaseFileName }}-t.webp" type="image/webp">
+       <img src="../{{ .File.BaseFileName }}-t.png" alt="">
+      </picture>
+    </div>
+    {{if not .Date.IsZero }}<h2 class="subtitle is-6"></h2>{{ end }}
+    {{ if and (.Site.Params.Info.adsense) (.Params.adsenseTop) }}
+    {{ partial "adsense" . }}
+    {{ end }}
+    <div id="blog_main">
+      {{ .Content }}
+      {{ if .Site.Params.Info.related }}
+      <div class="related">{{ partial "related" . }}</div>
+      {{ end }}
+    </div>
+  </div>
+</main>

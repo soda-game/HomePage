@@ -1,0 +1,39 @@
+{{ partial "header" . }}
+<style>
+  #tagshow {margin-left: 20px; font-size: 23pt; text-align: left; color: #06AEFF;}
+</style>
+</head>
+{{ partial "nav" . }}
+<main>
+  <section id="game">
+    <h2 id="tagshow"></h2>
+    <div id="product_wrap">
+      {{ $paginator := .Paginate (where .Data.Pages "Params.hidden" "ne" true) }}
+      {{ range sort .Paginator.Pages }}
+        <div class="product">
+          <a href="{{ .Permalink }}">
+              <img src="{{ if .Params.imgUrl }}{{ .Params.imgUrl }}{{else}}{{ end }}" alt="">
+              <h3 class="meta">{{ .Title }}</h3>
+              <p class="meta">{{ .Description }}</p>
+          </a>
+        </div>
+      {{ end }}
+      </div>
+    </div>  
+  </section>
+</main>
+{{ partial "footer" . }}
+<script type="text/javascript">
+  var getUrl = location.pathname;
+  console.log(getUrl);
+  getUrl = decodeURI(getUrl);
+  console.log(getUrl);
+  var tag = getUrl.substr( 6 );
+  tag = tag.slice( 0, -1 );
+  console.log(tag);
+  const tag_show = document.getElementById("tagshow");
+  tagshow.innerHTML = "ジャンル検索:" + tag;
+  console.log("aaaaaaaaa");
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{{ partial "header" . }}
+<link rel="stylesheet" href="/slick/slick-theme.css" type="text/css">
+<link rel="stylesheet" href="/slick/slick.css" type="text/css">
+<link rel="stylesheet" href="/css/game.css" type="text/css">
+<link rel="stylesheet" href="/css/md.css" type="text/css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script src="/slick/slick.js" type="text/javascript"></script>
+</head>
+<body>
+  {{ partial "nav" . }}
+  <main>
+    <div id="game_wrap">
+      <h1>{{ .Title }}</h1>
+      <div id="game_data_wrap">
+        {{ if .Params.slideImgUrls }}
+          {{ partial "slideImgUrls" .Params.slideImgUrls }}
+        {{ end }}
+        <div id="game_info">
+          <p>値段:
+            {{ if eq .Params.price "free" }}
+              無料
+            {{ else }}
+            ¥{{.Params.price}}
+            {{end}}
+          </p>
+          <p>
+            ジャンル:
+            {{ if .Params.slideImgUrls }}
+              {{ partial "tags" .Params.tags }}
+            {{ end }}
+          </p>
+          <p>リリース日:{{ .Params.releaseDate }}</p>
+          <p>最終リリース日:{{ .Params.lastReleaseDate }}</p>
+          <p>最終バージョン:{{ .Params.finalVersion }}</p>
+          <p>リンク</p>
+          {{ if .Params.freemUrl  }}
+            <a class="gameUrl" href="{{ .Params.freemUrl  }}">ダウンロード版(Freem!)</a>
+          {{ end }}
+          {{ if .Params.unityroomUrl  }}
+            <a class="gameUrl" href="{{ .Params.unityroomUrl  }}">ブラウザ版で遊ぶ(unityroom)</a>
+          {{ end }}
+          {{ if .Params.githubUrl  }}
+            <a class="gameUrl" href="{{ .Params.githubUrl  }}">GitHub</a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    <div class="md" id="game_main">
+      {{ .Content }}
+    </div>
+  </main>
+  <script>
+    $(function(){
+      $('.single-item').slick({
+        accessibility: true,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        dots: true,
+        fade: true,
+      });
+    });
+    function resizePlayer(iframes, ratio) {
+      if (!iframes[0]) return;
+      var win = $(".main-slider"),
+          width = win.width(),
+          playerWidth,
+          height = win.height(),
+          playerHeight,
+          ratio = ratio || 16/9;
+    
+      iframes.each(function(){
+        var current = $(this);
+        if (width / ratio < height) {
+          playerWidth = Math.ceil(height * ratio);
+          current.width(playerWidth).height(height).css({
+            left: (width - playerWidth) / 2,
+            top: 0
+            });
+        } else {
+          playerHeight = Math.ceil(width / ratio);
+          current.width(width).height(playerHeight).css({
+            left: 0,
+            top: (height - playerHeight) / 2
+          });
+        }
+      });
+    }
+  </script>
+  <script src="/js/youtube.js" type="text/javascript"></script>
+    {{ partial "footer" . }}
+</body>
+</html>
