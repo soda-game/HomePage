@@ -15,7 +15,7 @@ body {
 }
 .none {display: none;}
 header {
-  width: calc(100% - 20px);
+  width: calc(100vw - 20px);
   height: 50px;
   line-height: 50px;
   padding: 5px 0;
@@ -265,9 +265,6 @@ section#link #mail_sub {
 }
 
 @media screen and (min-width: 960px) {
-  main {
-      max-width: calc(960px + 192px);
-  }
   /* -------------- game -------------- */
   section#game .product {
     display: block;

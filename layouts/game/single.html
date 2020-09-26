@@ -13,7 +13,11 @@
       <h1>{{ .Title }}</h1>
       <div id="game_data_wrap">
         {{ if .Params.slideImgUrls }}
-          {{ partial "slideImgUrls" .Params.slideImgUrls }}
+          {{ if .Params.slideImgMovie }}
+            {{ partial "slideImgUrlsMovie" .Params.slideImgUrls }}
+          {{ else }}
+            {{ partial "slideImgUrls" .Params.slideImgUrls }}
+          {{ end }}
         {{ end }}
         <div id="game_info">
           <p>値段:

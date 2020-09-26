@@ -1,0 +1,15 @@
+<div id='slick'>
+  <div class='single-item'>
+    {{ range first 1 . }}
+      <div class="slideMovie">
+        <iframe data-src="https://www.youtube.com/embed/{{ . }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    {{ end }}
+
+    {{ if gt (len .) 1 }}
+      {{ range after 1 . }}
+        <img src="{{ . }}" alt="">
+      {{ end }}
+    {{ end }}
+  </div>
+</div>

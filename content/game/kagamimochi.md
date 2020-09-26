@@ -7,7 +7,7 @@ title: "鏡餅のみかん探し"
 description : "鏡餅と一緒にみかんを探しに行こう! /アクション"
 tags : ["アクション", "横スクロール"]
 imgUrl : "/game/kagamimochi/thumbnail.png"
-slideImgMovie : "1"
+slideImgMovie : true
 slideImgUrls : ["C2HXsWxXWCw", "/game/kagamimochi/thumbnail.png"]
 releaseDate : " 2018.01.05"
 lastReleaseDate : "2018.12.27"
