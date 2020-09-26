@@ -33,10 +33,11 @@
 <meta name="Keywords" content="">
 <meta name="description" content="ゲーム開発者のSoda(そおだ)の公式HPです">
 {{- if .IsPage -}}
+  <meta name='twitter:card' content='{{ .Params.card }}'>
   <meta property='og:image' content='https://sodagame.work{{ .Params.imgUrl }}'>
 {{- else -}}
+  <meta name='twitter:card' content='summary_large_image'>
   <meta property='og:image' content='https://sodagame.work/thumbnail.jpeg'>
 {{- end -}}
-<meta name='twitter:card' content='{{ .Params.card }}'>
 <meta name='twitter:site' content='@_soda_game'>
 <meta name='twitter:creator' content='@_soda_game'>
