@@ -1,8 +1,11 @@
 <div id='slick'>
   <div class='single-item'>
     {{ range first 1 . }}
-      <div class="slideMovie">
-        <iframe data-src="https://www.youtube.com/embed/{{ . }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="slideMovie_wrap">
+        <p id="startYouTubeMovie">クリックで動画を読み込む</p>
+          <div class="slideMovie">
+            <iframe data-src="https://www.youtube.com/embed/{{ . }}?autoplay=1&enablejsapi=1&controls=0&loop=1&iv_load_policy=3" frameborder="0"></iframe>
+          </div>
       </div>
     {{ end }}
 

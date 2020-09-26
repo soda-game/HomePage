@@ -58,37 +58,13 @@
       $('.single-item').slick({
         accessibility: true,
         autoplay: true,
-        autoplaySpeed: 1000,
+        speed: 500,
+        pauseOnHover: true,
+        autoplaySpeed: 4000,
         dots: true,
         fade: true,
       });
     });
-    function resizePlayer(iframes, ratio) {
-      if (!iframes[0]) return;
-      var win = $(".main-slider"),
-          width = win.width(),
-          playerWidth,
-          height = win.height(),
-          playerHeight,
-          ratio = ratio || 16/9;
-    
-      iframes.each(function(){
-        var current = $(this);
-        if (width / ratio < height) {
-          playerWidth = Math.ceil(height * ratio);
-          current.width(playerWidth).height(height).css({
-            left: (width - playerWidth) / 2,
-            top: 0
-            });
-        } else {
-          playerHeight = Math.ceil(width / ratio);
-          current.width(width).height(playerHeight).css({
-            left: 0,
-            top: (height - playerHeight) / 2
-          });
-        }
-      });
-    }
   </script>
   <script src="/js/youtube.js" type="text/javascript"></script>
     {{ partial "footer" . }}
