@@ -5,4 +5,5 @@ series: info
 description : "SodaGame 公式サイト開設"
 card : "summary_large_image"
 imgUrl : "/info/newsite.png"
+card : "summary_large_image"
 ---

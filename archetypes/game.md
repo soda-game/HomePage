@@ -15,4 +15,5 @@ price : "free"
 githubUrl : "https://github.com/soda-game"
 unityroomUrl : "https://unityroom.com/games/kagamimoti"
 freemUrl : https://www.freem.ne.jp/win/game/16619"
+card : "summary_large_image"
 ---
