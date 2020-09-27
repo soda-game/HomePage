@@ -8,15 +8,20 @@ h1, h2, h3, p, a, ul, li {font-family: "M PLUS 1p", "源真ゴシック", "Helve
 html {
   height: 100%;
   min-height: 100%;
+  width: 100vw;
+  max-width: 100%;
 }
 body {
   height: 100%;
   min-height: 100%;
   margin: 0;
+  width: 100vw;
+  max-width: 100%;
 }
 .none {display: none;}
 header {
   width: calc(100vw - 20px);
+  max-width: 100%;
   height: 50px;
   line-height: 50px;
   padding: 5px 0;
@@ -90,7 +95,7 @@ main section h2 {
 
 .bg_img {
   width: 100vw;
-  background-image: 
+  background-image:
     /* 1枚目の背景画像のパス */
     url(/img/haikei_l.png),
     /* 2枚目の背景画像のパス */
@@ -179,7 +184,7 @@ section#about div#about_wrap div#a_face_img_wrap img {
 }
 section#about div#about_wrap div#a_data {
   text-align: center;
-} 
+}
 section#about p#a_name{
   font-family: "SP_UI", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 50px; color: #06AEFF;
@@ -302,7 +307,7 @@ section#link #mail_sub {
       -webkit-transform : translateY(-50%);
       transform : translateY(-50%);
       text-align: left;
-  } 
+  }
   /* -------------- about -------------- */
 
   /* -------------- info -------------- */
