@@ -6,7 +6,7 @@
 {{ partial "nav" . }}
 <main>
   <section id="game">
-    <h2 id="tagshow">#{{ .Title }}のタグがついているゲーム一覧</h2>
+    <h2 id="tagshow">全てのゲーム一覧</h2>
     <div id="product_wrap">
       {{ $paginator := .Paginate (where .Data.Pages "Params.hidden" "ne" true) }}
       {{ range sort .Paginator.Pages }}

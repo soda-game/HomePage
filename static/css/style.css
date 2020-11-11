@@ -93,7 +93,6 @@ main section h2 {
   font-family: "SP_UI", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 45pt; color: #06AEFF;
 }
-
 .bg_img {
   width: 100vw;
   background-image:
@@ -166,6 +165,8 @@ section#game a img {
 section#game a .meta {
   padding-left: 5px;
 }
+section#game a h3 {text-decoration: underline;}
+#product_wrap #show_all_game{width: 100%; text-align: right; text-decoration: underline; color: #4183C4;}
 /* -------------- game -------------- */
 
 /* -------------- about -------------- */
@@ -232,7 +233,8 @@ section#link .links#twitter_link{background-color: #0092EC; position: relative; 
 section#link .links#twitter_link:hover span.link_no_show {height: 100%; line-height: 70px; width: 100%; background-color: rgba(0, 0, 0, 0.6); transition: ease-out .25s; font-size: 16pt;}
 section#link .links#github_link{background-color: #000;}
 section#link .links#youtube_link{background-color: #c4302b;}
-section#link .links.other_link{background-color: #57BD57;}
+section#link .links.other_link_g{background-color: #57BD57;}
+section#link .links.other_link_b{background-color: #0092EC;}
 
 section#link #mailwrap {
   text-align: center;

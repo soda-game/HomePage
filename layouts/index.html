@@ -6,10 +6,10 @@
         <img src="/img/logo.png" alt="">
     </a>
     <div class="sp_under">
-        <a href="#game">GAME</a><a> </a>
-        <a href="#about">ABOUT</a><a> </a>
-        <a href="#info">INFO</a><a> </a>
-        <a href="#link">LINK</a><a>　</a>
+        <a href="#game">GAME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#info">INFO</a>
+        <a href="#link">LINK</a>
     </div>
 </header>
 <main class="mt">
@@ -21,7 +21,7 @@
         <div class="wrap">
             <h2>GAME</h2>
             <div id="product_wrap">
-                {{ range where .Site.Pages "Params.series" "game" }}
+                {{ range first 6 (where .Site.Pages "Params.series" "game") }}
                     <div class="product">
                         <a class="p_link" href="{{ .Permalink }}">
                             <img src="{{ if .Params.imgUrl }}{{ .Params.imgUrl }}{{else}}{{ end }}" alt="">
@@ -30,6 +30,7 @@
                         </a>
                     </div>
                 {{ end }}
+                <a href="/game" id="show_all_game">全てのゲームを見る</a>
             </div>    
         </div>
     </section>
@@ -42,7 +43,7 @@
                 </div>
                 <div id="a_data" class="a_ib">
                     <p id="a_name">Soda(そおだ)</p>
-                    <p class="a_about">職業　：学生</p>
+                    <p class="a_about">職業 ：学生</p>
                     <p class="a_about">スキル：C# / C++ / デザイン / Git</p>
                 </div>
             </div>
@@ -68,8 +69,9 @@
                     <a class="links" id="twitter_link" href="https://twitter.com/{{ $.Site.Params.twitterId }}">Twitter<span class="link_no_show">@{{ $.Site.Params.twitterId }}</span></a>
                     <a class="links" id="youtube_link" href="{{ $.Site.Params.youtube }}">YouTube</a>
                     <a class="links" id="github_link" href="{{ $.Site.Params.github }}">GitHub</a>
-                    <a class="links other_link" href="{{ $.Site.Params.freem }}">freem!</a>
-                    <a class="links other_link" href="{{ $.Site.Params.unityroom }}">unityroom</a>
+                    <a class="links other_link_g" href="{{ $.Site.Params.freem }}">freem!</a>
+                    <a class="links other_link_g" href="{{ $.Site.Params.unityroom }}">unityroom</a>
+                    <a class="links other_link_b" href="{{ $.Site.Params.Studio }}">00:00Studio</a>
                 </div>
                 <div id="mailwrap">
                     <p id="mail">Mail : {{ $.Site.Params.mail }}</p>

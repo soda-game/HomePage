@@ -3,7 +3,6 @@ languageCode = "ja-ja"
 title = "SodaGame"
 
 pygmentsCodeFences = true
-googleAnalytics = "UA-163146016-3"
 
 [params]
 twitterId = "_Soda_Game"
@@ -11,4 +10,5 @@ freem = "https://www.freem.ne.jp/brand/8249"
 unityroom = "https://unityroom.com/users/c248dqxr3z0v5wbn61ug"
 youtube = "https://www.youtube.com/channel/UC8_6eQDJ9SzV5ayXBYu98bA"
 github = "https://github.com/soda-game"
+Studio = "https://0000.studio/Soda_Game"
 mail = "sodagame98[@]gmail.com"
